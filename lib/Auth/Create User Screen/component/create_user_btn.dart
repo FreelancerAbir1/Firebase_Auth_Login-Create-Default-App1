@@ -1,0 +1,16 @@
+
+import 'package:flutter/material.dart';
+
+class CreateUserButton extends StatelessWidget {
+  final GestureTapCallback press;
+
+  const CreateUserButton({super.key, required this.press});
+
+  @override
+  Widget build(BuildContext context) {
+    return ElevatedButton(
+      onPressed: press,
+      child: const Text('Create Account'),
+    );
+  }
+}

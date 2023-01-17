@@ -1,18 +1,25 @@
-
 import 'package:flutter/material.dart';
 
-class EmailField extends StatelessWidget {
-  const EmailField({
+class CustomTextField extends StatelessWidget {
+  const CustomTextField({
     Key? key,
-    required this.emailController,
+    required this.controller, required this.hintText,
   }) : super(key: key);
 
-  final TextEditingController emailController;
+  final TextEditingController controller;
+  final String hintText;
 
   @override
   Widget build(BuildContext context) {
     return TextFormField(
-      controller: emailController,
+      controller: controller,
+      decoration: InputDecoration(hintText: hintText),
+      validator: (text) {
+        if (controller.text.isEmpty) {
+          return "Empty text field not allow";
+        }
+        return null;
+      },
     );
   }
 }

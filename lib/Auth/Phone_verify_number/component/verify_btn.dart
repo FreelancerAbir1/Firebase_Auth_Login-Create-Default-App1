@@ -1,13 +1,14 @@
+
 import 'package:flutter/material.dart';
 
-
-class CreateAccountButton extends StatelessWidget {
-  final GestureTapCallback press;
-  const CreateAccountButton({
+class VerifyBtn extends StatelessWidget {
+  const VerifyBtn({
     Key? key,
-    required this.text, required this.press,
+    required this.text,
+    required this.press,
   }) : super(key: key);
   final String text;
+  final GestureTapCallback press;
   @override
   Widget build(BuildContext context) {
     return ElevatedButton(
